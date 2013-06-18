@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap/css/bootstrap.css">
+
+</head>
+<body>
+
+<div ng-app="filterApp">
+    <div ng-controller="avengersController">
+      <div>
+       <input type="text" placeholder="Search here.." class="search-query span3" ng-model="search.$">
+        <table class="table table-bordered table-striped" style="width: auto">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Character</th>
+                </tr>
+                <tr ng-repeat="actor in avengers.cast | orderBy:'name'|filter:search">
+                    <td>{{actor.name}}</td>
+                    <td>{{actor.character}}</td>
+                </tr>
+            </thead>
+        </table>
+       </div>
+
+    </div>
+
+
+
+
+
+
+</div>
+
+<script type="text/javascript" src="../js/angular.js"></script>
+<script src="../js/filterController.js"></script>
+</body>
+</html>
